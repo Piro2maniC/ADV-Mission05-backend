@@ -1,71 +1,87 @@
 // index.js
 const express = require('express');
 const bodyParser = require('body-parser');
-const { MongoClient } = require('mongodb');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const AuctionItems = require('./models/auctionItems');
 
 const app = express();
-const port = 5000; // You can change the port if needed
-const url = 'mongodb://localhost:27017'; // MongoDB connection URL
-const dbName = 'mydatabase'; // Change to your database name
+const port = 5000;
+const mongoURI = 'mongodb://localhost:27017/MISSION05';
 
 app.use(bodyParser.json());
-
-let db;
+app.use(cors());
 
 // Connect to MongoDB
-MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(client => {
-        console.log('Connected to MongoDB');
-        db = client.db(dbName);
-    })
-    .catch(error => console.error(error));
+mongoose.connect(mongoURI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Could not connect to MongoDB:', err));
 
 // Insert Route
 app.post('/insert', async (req, res) => {
     try {
-        const result = await db.collection('mycollection').insertOne(req.body);
-        res.status(201).send({ insertedId: result.insertedId });
+        const auctionItem = new AuctionItems(req.body);
+        const result = await auctionItem.save();
+        res.status(201).json(result);
     } catch (error) {
-        res.status(500).send(error);
+        console.error('Error inserting document:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 // Find Route
 app.get('/find', async (req, res) => {
     try {
-        const documents = await db.collection('mycollection').find({}).toArray();
-        res.send(documents);
+        const { search } = req.query;
+        let query = {};
+        
+        if (search) {
+            query = {
+                $or: [
+                    { title: { $regex: search, $options: 'i' } },
+                    { description: { $regex: search, $options: 'i' } }
+                ]
+            };
+        }
+        
+        const documents = await AuctionItems.find(query);
+        res.json(documents);
     } catch (error) {
-        res.status(500).send(error);
+        console.error('Error finding documents:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 // Update Route
 app.put('/update/:id', async (req, res) => {
     try {
-        const result = await db.collection('mycollection').updateOne(
-            { _id: new MongoClient.ObjectId(req.params.id) },
-            { $set: req.body }
+        const result = await AuctionItems.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
         );
-        res.send({ modifiedCount: result.modifiedCount });
+        if (!result) {
+            return res.status(404).json({ error: 'Document not found' });
+        }
+        res.json(result);
     } catch (error) {
-        res.status(500).send(error);
+        console.error('Error updating document:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 // Delete Route
 app.delete('/delete/:id', async (req, res) => {
     try {
-        const result = await db.collection('mycollection').deleteOne({ _id: new MongoClient.ObjectId(req.params.id) });
-        res.send({ deletedCount: result.deletedCount });
+        const result = await AuctionItems.findByIdAndDelete(req.params.id);
+        if (!result) {
+            return res.status(404).json({ error: 'Document not found' });
+        }
+        res.json({ message: 'Document deleted successfully' });
     } catch (error) {
-        res.status(500).send(error);
+        console.error('Error deleting document:', error);
+        res.status(500).json({ error: error.message });
     }
-});
-
-// Time Route
-app.get('/time', (req, res) => {
-    res.send({ currentTime: new Date('2024-12-17T11:09:04+13:00').toString() });
 });
 
 // Start the server

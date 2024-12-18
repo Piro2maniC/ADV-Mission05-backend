@@ -1,73 +1,56 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 const { Command } = require('commander');
-
-// node mongo_cli.js <command>
-// Replace <command> with insert, find, update, delete, or time as needed. 
+const AuctionItems = require('./models/auctionItems');
 
 const program = new Command();
-const url = 'mongodb://localhost:27017'; // Change if necessary
-const dbName = 'MISSION05'; // Change to your database name
-
-const client = new MongoClient(url);
+const mongoURI = 'mongodb://localhost:27017/MISSION05';
 
 async function connect() {
-    await client.connect();
-    console.log('Connected to MongoDB');
+    try {
+        await mongoose.connect(mongoURI);
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err.message);
+        process.exit(1);
+    }
 }
 
 program
-    .command('insert <data>')
-    .description('Insert a document into the database')
-    .action(async (data) => {
-        await connect();
-        const db = client.db(dbName);
-        const collection = db.collection('MISSION05'); // Change to your collection name
-        const result = await collection.insertOne(JSON.parse(data));
-        console.log(`Inserted document: ${result.insertedId}`);
-        client.close();
+    .command('insert <title> <description> <start_price> <reserve_price>')
+    .description('Insert an Auction Item into the database')
+    .action(async (title, description, start_price, reserve_price) => {
+        try {
+            await connect();
+            
+            const auctionItem = new AuctionItems({
+                title,
+                description,
+                start_price: parseFloat(start_price),
+                reserve_price: parseFloat(reserve_price)
+            });
+
+            const result = await auctionItem.save();
+            console.log('Inserted document:', result);
+        } catch (err) {
+            console.error('Error inserting document:', err.message);
+        } finally {
+            await mongoose.connection.close();
+        }
     });
 
 program
-    .command('find')
-    .description('Find all documents in the database')
-    .action(async () => {
-        await connect();
-        const db = client.db(dbName);
-        const collection = db.collection('MISSION05'); // Change to your collection name
-        const documents = await collection.find({}).toArray();
-        console.log(documents);
-        client.close();
-    });
-
-program
-    .command('update <id> <data>')
-    .description('Update a document in the database')
-    .action(async (id, data) => {
-        await connect();
-        const db = client.db(dbName);
-        const collection = db.collection('MISSION05'); // Change to your collection name
-        const result = await collection.updateOne({ _id: id }, { $set: JSON.parse(data) });
-        console.log(`Updated document: ${result.modifiedCount}`);
-        client.close();
-    });
-
-program
-    .command('delete <id>')
-    .description('Delete a document from the database')
-    .action(async (id) => {
-        await connect();
-        const db = client.db(dbName);
-        const collection = db.collection('MISSION05'); // Change to your collection name
-        const result = await collection.deleteOne({ _id: id });
-        console.log(`Deleted document: ${result.deletedCount}`);
-        client.close();
-    });
-
-program
-    .command('time')
-    .description('Display the current local time')
-    .action(() => {
-        console.log(`Current local time: ${new Date('2024-12-17T09:54:59+13:00').toString()}`);
+    .command('find <title>')
+    .description('Find Auction Item by title')
+    .action(async (title) => {
+        try {
+            await connect();
+            const items = await AuctionItems.find({ title });
+            console.log('Found items:', items);
+        } catch (err) {
+            console.error('Error finding documents:', err.message);
+        } finally {
+            await mongoose.connection.close();
+        }
     });
 
 program.parse(process.argv);
