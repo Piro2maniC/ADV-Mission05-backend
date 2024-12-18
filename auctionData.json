@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Antique Vase",
+        "description": "A beautiful antique vase from the 18th century.",
+        "start_price": 100.00,
+        "reserve_price": 150.00
+    },
+    {
+        "title": "Vintage Watch",
+        "description": "A classic vintage watch in excellent condition.",
+        "start_price": 200.00,
+        "reserve_price": 300.00
+    },
+    {
+        "title": "Rare Coin",
+        "description": "A rare coin from the Roman Empire.",
+        "start_price": 50.00,
+        "reserve_price": 75.00
+    },
+    {
+        "title": "Collectible Stamp",
+        "description": "A collectible stamp from the early 20th century.",
+        "start_price": 10.00,
+        "reserve_price": 20.00
+    },
+    {
+        "title": "Classic Car",
+        "description": "A classic car from the 1960s, fully restored.",
+        "start_price": 15000.00,
+        "reserve_price": 20000.00
+    }
+]
