@@ -1,32 +1,195 @@
 [
-    {
-        "title": "Antique Vase",
-        "description": "A beautiful antique vase from the 18th century.",
-        "start_price": 100.00,
-        "reserve_price": 150.00
-    },
-    {
-        "title": "Vintage Watch",
-        "description": "A classic vintage watch in excellent condition.",
-        "start_price": 200.00,
-        "reserve_price": 300.00
-    },
-    {
-        "title": "Rare Coin",
-        "description": "A rare coin from the Roman Empire.",
-        "start_price": 50.00,
-        "reserve_price": 75.00
-    },
-    {
-        "title": "Collectible Stamp",
-        "description": "A collectible stamp from the early 20th century.",
-        "start_price": 10.00,
-        "reserve_price": 20.00
-    },
-    {
-        "title": "Classic Car",
-        "description": "A classic car from the 1960s, fully restored.",
-        "start_price": 15000.00,
-        "reserve_price": 20000.00
-    }
+  {
+    "title": "Antique Vase",
+    "description": "A beautiful antique vase from the 18th century.",
+    "start_price": 100.0,
+    "reserve_price": 150.0
+  },
+  {
+    "title": "Vintage Watch",
+    "description": "A classic vintage watch in excellent condition.",
+    "start_price": 200.0,
+    "reserve_price": 300.0
+  },
+  {
+    "title": "Rare Coin",
+    "description": "A rare coin from the Roman Empire.",
+    "start_price": 50.0,
+    "reserve_price": 75.0
+  },
+  {
+    "title": "Collectible Stamp",
+    "description": "A collectible stamp from the early 20th century.",
+    "start_price": 10.0,
+    "reserve_price": 20.0
+  },
+  {
+    "title": "Classic Car",
+    "description": "A classic car from the 1960s, fully restored.",
+    "start_price": 15000.0,
+    "reserve_price": 20000.0
+  },
+
+  {
+    "title": "Vintage Clock",
+    "description": "This classic vintage wall clock from the 1930s is a true gem of timeless craftsmanship. Its intricately designed hands and weathered finish evoke a sense of nostalgia and elegance, perfect for any traditional or rustic interior. To maintain this clock, dust it with a soft cloth and avoid exposure to direct sunlight. The clock runs on a simple mechanism that ensures easy handling and longevity. Warranty covers functionality for one year, and it will be delivered securely in protective packaging within 7 business days.",
+    "start_price": 50,
+    "reserve_price": 150,
+    "image_url": "https://cdn.shopify.com/s/files/1/0817/1254/6092/files/Antique-Mantel-Clock-Wooden-1.jpg"
+  },
+  {
+    "title": "Antique Vase",
+    "description": "This rare porcelain vase from the Qing dynasty is a masterpiece of ancient Chinese artistry. Its delicate floral patterns and vibrant colors make it a centerpiece for any room or collection. To preserve its beauty, clean it gently with a damp cloth and keep it away from harsh chemicals. The vase includes a one-year authenticity guarantee, and delivery will be handled with utmost care to ensure it arrives in pristine condition within 10 business days.",
+    "start_price": 200,
+    "reserve_price": 500,
+    "image_url": "https://m.media-amazon.com/images/I/71KNmZGUtoL._AC_SL1500_.jpg"
+  },
+  {
+    "title": "Victorian Vanity",
+    "description": "This exquisite Victorian vanity from the 19th century exudes charm and elegance, featuring ornate carvings and an antique finish. Despite a small amount of damage, it remains a striking piece for any bedroom or dressing room. To maintain its luster, polish the wood occasionally with a suitable conditioner and avoid excessive moisture. It comes with a limited two-year warranty, and delivery includes careful handling to preserve its condition, arriving in 10-15 business days.",
+    "start_price": 600,
+    "reserve_price": 1000,
+    "image_url": "https://m.media-amazon.com/images/I/61ENypat-+L._AC_SL1001_.jpg"
+  },
+  {
+    "title": "Renaissance Painting",
+    "description": "An exquisite oil painting from the Renaissance period, this piece captures a timeless moment of artistry and emotion. The vivid colors and detailed brushwork make it a centerpiece for any art collector. To maintain its vibrancy, keep it in a temperature-controlled environment and avoid direct sunlight. The painting comes with a certificate of authenticity and a lifetime guarantee. Shipping includes museum-grade packaging and arrives within 10 business days.",
+    "start_price": 5000,
+    "reserve_price": 15000,
+    "image_url": "https://preview.redd.it/real-or-fake-renaissance-artwork-v0-x3sxplryi4pc1.jpg?width=1080&crop=smart&auto=webp&s=a032048d41a4ac32967abffdd823c014d0fb2434"
+  },
+  {
+    "title": "Bronze Sculpture",
+    "description": "This handcrafted bronze sculpture from the early 1900s is a stunning example of meticulous artistry. Its rich patina and elegant design make it a perfect addition to any art or antique collection. To keep its brilliance, clean with a soft, damp cloth and avoid abrasive materials. It includes a five-year warranty on craftsmanship. Delivery is carefully managed with protective wrapping to ensure safe arrival within 7-10 business days.",
+    "start_price": 800,
+    "reserve_price": 2000,
+    "image_url": "https://www.js.co.nz/img/stock/7075/206A7566.JPG"
+  },
+  {
+    "title": "Vintage Gramophone",
+    "description": "This fully functional gramophone from the 1920s is a marvel of engineering and style. It features a beautifully crafted wooden base and a gleaming brass horn. To maintain performance, dust the horn and mechanism regularly and handle the needle with care. Includes a two-year warranty for mechanical parts. Delivered in secure, shockproof packaging within 7 business days.",
+    "start_price": 300,
+    "reserve_price": 750,
+    "image_url": "https://www.winecountrycraft.co.nz/cdn/shop/products/Gramophone-1_720x@2x.jpg?v=1674521021"
+  },
+  {
+    "title": "Antique Pocket Watch",
+    "description": "This gold pocket watch from the late 19th century is a timeless symbol of sophistication and precision. Its intricate engraving and robust mechanism showcase remarkable craftsmanship. To preserve its condition, wind it gently and store it in a protective case. Includes a one-year warranty on movement. Ships in a protective case to ensure safe delivery within 5-7 business days.",
+    "start_price": 400,
+    "reserve_price": 1200,
+    "image_url": "https://ashton-blakey-antiques.com/cdn/shop/files/IMG_3993_1024x1024.jpg?v=1733612742"
+  },
+  {
+    "title": "Art Deco Lamp",
+    "description": "A stunning Art Deco lamp from the 1930s, featuring a striking geometric design and original glass shade. This lamp is both a functional light source and a statement piece. Clean the glass and metal surfaces carefully with a soft cloth. Includes a three-year warranty for electrical components. Securely packaged for delivery, arriving within 7 business days.",
+    "start_price": 150,
+    "reserve_price": 450,
+    "image_url": "https://i.etsystatic.com/14108656/r/il/89a68a/1486333167/il_794xN.1486333167_8qnu.jpg"
+  },
+  {
+    "title": "Rare First Edition Book",
+    "description": "A first edition of a classic novel from the early 1900s, this book is a treasure for collectors and literature enthusiasts. Its aged pages and authentic binding tell a story of its own. To maintain, store in a dry, cool place away from direct sunlight. Includes a certificate of authenticity and a two-year warranty. Ships in protective packaging to ensure its preservation during delivery, arriving in 5-10 business days.",
+    "start_price": 1000,
+    "reserve_price": 3000,
+    "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivlaeURUycIg/v1/1400x1370.webp"
+  },
+  {
+    "title": "Victorian Jewelry Box",
+    "description": "This intricately designed Victorian jewelry box, made of mahogany, exudes elegance and sophistication. Its velvet-lined interior provides safe storage for precious items. Clean the wood with a gentle polish to maintain its shine. Includes a one-year craftsmanship warranty. Ships securely within 7 business days.",
+    "start_price": 200,
+    "reserve_price": 600,
+    "image_url": "https://i.etsystatic.com/11904484/r/il/f546a8/2062915898/il_794xN.2062915898_rxi4.jpg"
+  },
+
+  {
+    "title": "Mid-Century Modern Chair",
+    "description": "This iconic chair from the mid-century modern design movement is a masterpiece of both form and function. Crafted with a sleek wooden frame and upholstered for comfort, it blends seamlessly into any modern or retro-inspired space. To keep it looking pristine, dust the wooden parts regularly and spot-clean the upholstery with a mild cleaner. Backed by a one-year warranty, this chair is delivered in flat-pack form with clear assembly instructions, arriving in 5-7 business days.",
+    "start_price": 250,
+    "reserve_price": 800,
+    "image_url": "https://i5.walmartimages.com/seo/Miniyam-Mid-Century-Modern-Accent-Chair-with-Wood-Frame-Upholstered-Living-Room-Chairs-with-Waist-Cushion-Reading-Armchair-Blue_8b479952-5bc9-4cad-a26c-dbdaf52e5cb9.8f25fd2c9545f9febcaaaa695f8f188f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"
+  },
+  {
+    "title": "Classic Car Hood Ornament",
+    "description": "This collectible hood ornament from a 1940s classic car is a gleaming tribute to automotive history. Made of durable metal with a polished chrome finish, it makes a perfect addition to any collection. To maintain its shine, clean with a soft cloth and a non-abrasive cleaner. Includes a one-year warranty against tarnish. Delivered in protective packaging, it will reach you within 7 business days.",
+    "start_price": 100,
+    "reserve_price": 300,
+    "image_url": "https://www.motorcities.org/images/file-20161219191937_History_Hood_Ornaments.jpg"
+  },
+  {
+    "title": "Vintage Typewriter",
+    "description": "A working vintage typewriter from the 1950s, this piece is a testament to durability and classic engineering. With its distinctive key action and retro charm, it is perfect for both practical use and display. To ensure longevity, keep the keys clean and occasionally oil the mechanical parts. Backed by a one-year warranty for moving components, it is shipped fully functional and securely packaged within 5-7 business days.",
+    "start_price": 120,
+    "reserve_price": 350,
+    "image_url": "https://thevintagerooms.co.uk/wp-content/uploads/2023/02/Underwood-typewriterEdit_-6.jpg"
+  },
+  {
+    "title": "Antique Map",
+    "description": "This beautifully preserved map from the 18th century offers a glimpse into the cartography of a bygone era. Its intricate details and delicate hand-coloring make it a prized possession for collectors and history enthusiasts alike. To maintain its condition, store it in a dry, cool place and frame it with UV-protective glass. Includes a certificate of authenticity and ships in museum-grade packaging within 7-10 business days.",
+    "start_price": 300,
+    "reserve_price": 900,
+    "image_url": "https://www.molloysantiques.co.nz/images/602467/pid2653310/antique-map-genoa-dated-1834-pic-1a-2048253a10.10-983-f.jpg"
+  },
+  {
+    "title": "Edwardian Dining Set",
+    "description": "A complete Edwardian dining table and chairs set, this piece exudes timeless elegance with its carved wood details and polished finish. The craftsmanship reflects the sophistication of its era, making it an excellent choice for traditional interiors. To preserve its beauty, polish the wood occasionally and avoid prolonged exposure to moisture. Covered by a two-year warranty, this set is delivered with expert handling to ensure safe arrival within 10-15 business days.",
+    "start_price": 1500,
+    "reserve_price": 4500,
+    "image_url": "https://www.sellingantiques.co.uk/photosnew/dealer_wickersley/dealer_wickersley_highres_1521391578293-8495800459.jpg"
+  },
+  {
+    "title": "Old World Globe",
+    "description": "This vintage globe from the 1940s showcases political borders of its time, offering a fascinating historical perspective. Its sturdy base and vibrant map details make it a perfect educational tool or decorative piece. To maintain its appearance, clean the surface gently with a damp cloth and avoid exposing it to direct sunlight. Backed by a one-year warranty, it is shipped securely in a custom-designed box, arriving within 5-7 business days.",
+    "start_price": 200,
+    "reserve_price": 500,
+    "image_url": "https://www.mapworld.co.nz/images/replogle/franklin.jpg"
+  },
+  {
+    "title": "Classic Movie Poster",
+    "description": "An original poster from a 1960s blockbuster movie, this collectible item is a must-have for cinema enthusiasts. Its vibrant colors and authentic print quality make it ideal for framing and display. To keep it in pristine condition, frame it with UV-protective glass and store it away from high humidity areas. Includes a certificate of authenticity and ships rolled in a protective tube within 5 business days.",
+    "start_price": 100,
+    "reserve_price": 300,
+    "image_url": "https://i.etsystatic.com/10541815/r/il/0a53af/735667321/il_794xN.735667321_iwj3.jpg"
+  },
+  {
+    "title": "Antique Sewing Machine",
+    "description": "This manually operated sewing machine from the early 20th century is a fine example of functional art. Its ornate detailing and durable construction make it both a practical tool and a striking decorative piece. To ensure smooth operation, oil the moving parts periodically and clean the exterior with a soft cloth. Includes a two-year warranty for mechanical components. Delivered in protective packaging within 7-10 business days.",
+    "start_price": 250,
+    "reserve_price": 700,
+    "image_url": "https://images.squarespace-cdn.com/content/v1/5a4ab3761f318dd63987e66d/1527987086666-1DRY10K4YA77E7FGUS0I/Featherweight+Sewing+Machine?format=1500w"
+  },
+  {
+    "title": "Vintage Camera",
+    "description": "A collectible camera from the 1930s, this piece retains its original case and operational integrity. Its retro design and mechanical functionality make it ideal for collectors and photography enthusiasts. To maintain, clean the lens and body with a soft cloth and avoid exposing it to moisture. Comes with a one-year warranty on its mechanical parts. Ships securely within 5-7 business days.",
+    "start_price": 300,
+    "reserve_price": 900,
+    "image_url": "https://images.squarespace-cdn.com/content/v1/59cc767e8dd04135bf0c554c/1601495404590-1Y4BAGGHEP1Y1S6ROAF0/IMG_0458.jpg?format=1500w"
+  },
+  {
+    "title": "19th Century Painting",
+    "description": "This landscape oil painting from the 19th century captures a serene and timeless scene with masterful brushwork. Its rich colors and classic style make it an ideal centerpiece for any art collection. To preserve its condition, store in a temperature-controlled environment and avoid direct sunlight. Includes a certificate of authenticity and a lifetime guarantee. Delivered with protective packaging, ensuring safe arrival within 7-10 business days.",
+    "start_price": 800,
+    "reserve_price": 2500,
+    "image_url": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT8YA1Q4dDTvjFVjAYObss4lh0iOUaYGHybt0TfVQibdXJiBUQev5eNtCcIWv7SV5U4doJXlUOm7CkW2M4M1swJA5RK1jg81cHifAJU3kM"
+  },
+  {
+    "title": "Art Nouveau Mirror",
+    "description": "A decorative Art Nouveau mirror with an intricate brass frame, this piece reflects the elegance and fluidity of its era. Perfect for a bedroom or hallway, it adds a touch of vintage charm. To maintain, clean the glass with a non-abrasive cleaner and polish the frame occasionally. Includes a one-year warranty and is shipped securely with padding to prevent damage, arriving in 5-7 business days.",
+    "start_price": 500,
+    "reserve_price": 1500,
+    "image_url": "https://images.squarespace-cdn.com/content/v1/59cc767e8dd04135bf0c554c/1601495404590-1Y4BAGGHEP1Y1S6ROAF0/IMG_0458.jpg?format=1500w"
+  },
+  {
+    "title": "Vintage Persian Rug",
+    "description": "This handwoven Persian rug from the mid-20th century showcases intricate patterns and rich colors that bring warmth and style to any space. Its high-quality wool ensures durability and a soft texture. To maintain, vacuum regularly and spot-clean with a mild detergent. Includes a certificate of authenticity and a two-year warranty. Ships rolled in protective wrapping within 7-10 business days.",
+    "start_price": 1000,
+    "reserve_price": 3000,
+    "image_url": "https://i.etsystatic.com/24097013/r/il/4e3cd1/3906712318/il_570xN.3906712318_t14h.jpg"
+  },
+  {
+    "title": "Antique Chess Set",
+    "description": "This carved ivory chess set from the early 1900s is an exquisite piece of craftsmanship. Each piece is intricately detailed, making it a luxurious addition to any game room or collection. To maintain, keep it in a dust-free display case and avoid exposure to moisture. Includes a certificate of authenticity and a three-year warranty. Shipped with custom padding to ensure safe arrival within 7-10 business days.",
+    "start_price": 700,
+    "reserve_price": 2000,
+    "image_url": "https://m.media-amazon.com/images/I/81cTeJf2i2L._AC_SL1500_.jpg"
+  }
 ]
