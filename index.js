@@ -55,9 +55,11 @@ app.get('/find', async (req, res) => {
 // Fetch 5 auction items
 app.get('/api/auctions', async (req, res) => {
     try {
-        const items = await AuctionItems.find().limit(5);
+        const items = await AuctionItems.find().limit(10);
+        console.log('Fetched items:', items); // Log fetched items
         res.json(items);
     } catch (err) {
+        console.error('Error fetching auction items:', err);
         res.status(500).json({ error: 'Failed to fetch auction items' });
     }
 });

@@ -1,44 +1,5 @@
 [
-  {
-    "title": "Antique Vase",
-    "description": "A beautiful antique vase from the 18th century.",
-    "start_price": 100.0,
-    "reserve_price": 150.0,
-    "location": "Auckland",
-    "closing_time": "3 hours"
-  },
-  {
-    "title": "Vintage Watch",
-    "description": "A classic vintage watch in excellent condition.",
-    "start_price": 200.0,
-    "reserve_price": 300.0,
-    "location": "Wellington",
-    "closing_time": "5 hours"
-  },
-  {
-    "title": "Rare Coin",
-    "description": "A rare coin from the Roman Empire.",
-    "start_price": 50.0,
-    "reserve_price": 75.0,
-    "location": "Christchurch",
-    "closing_time": "2 hours"
-  },
-  {
-    "title": "Collectible Stamp",
-    "description": "A collectible stamp from the early 20th century.",
-    "start_price": 10.0,
-    "reserve_price": 20.0,
-    "location": "Hamilton",
-    "closing_time": "4 hours"
-  },
-  {
-    "title": "Classic Car",
-    "description": "A classic car from the 1960s, fully restored.",
-    "start_price": 15000.0,
-    "reserve_price": 20000.0,
-    "location": "Queenstown",
-    "closing_time": "24 hours"
-  },
+
   {
     "title": "Vintage Clock",
     "description": "This classic vintage wall clock from the 1930s is a true gem of timeless craftsmanship.",
