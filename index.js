@@ -62,6 +62,20 @@ app.get("/find", async (req, res) => {
   }
 });
 
+// Find by ID Route
+app.get("/find/:id", async (req, res) => {
+  try {
+    const document = await AuctionItems.findById(req.params.id);
+    if (!document) {
+      return res.status(404).json({ error: "Item not found" });
+    }
+    res.json(document);
+  } catch (error) {
+    console.error("Error finding document:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Update Route
 app.put("/update/:id", async (req, res) => {
   try {
