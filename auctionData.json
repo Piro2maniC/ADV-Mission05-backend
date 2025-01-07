@@ -69,7 +69,7 @@
       "title": "Art Deco Lamp",
       "description": "A stunning Art Deco lamp from the 1930s, featuring a striking geometric design and original glass shade.",
       "start_price": 150,
-      "reserve_price": 450,
+      "reserve_price": 1,
       "image_url": "https://i.etsystatic.com/14108656/r/il/89a68a/1486333167/il_794xN.1486333167_8qnu.jpg",
       "location": "Wellington",
       "closing_time": "4 hours"
@@ -105,7 +105,7 @@
       "title": "Classic Car Hood Ornament",
       "description": "This collectible hood ornament from a 1940s classic car is a gleaming tribute to automotive history.",
       "start_price": 100,
-      "reserve_price": 300,
+      "reserve_price": 1,
       "image_url": "https://www.motorcities.org/images/file-20161219191937_History_Hood_Ornaments.jpg",
       "location": "Dunedin",
       "closing_time": "8 hours"
@@ -141,7 +141,7 @@
       "title": "Old World Globe",
       "description": "This vintage globe from the 1940s showcases political borders of its time, offering a fascinating historical perspective.",
       "start_price": 200,
-      "reserve_price": 500,
+      "reserve_price": 1,
       "image_url": "https://www.mapworld.co.nz/images/replogle/franklin.jpg",
       "location": "Rotorua",
       "closing_time": "9 hours"
@@ -152,7 +152,7 @@
         "title": "Classic Movie Poster",
         "description": "An original poster from a 1960s blockbuster movie, this collectible item is a must-have for cinema enthusiasts.",
         "start_price": 100,
-        "reserve_price": 300,
+        "reserve_price": 1,
         "image_url": "https://i.etsystatic.com/10541815/r/il/0a53af/735667321/il_794xN.735667321_iwj3.jpg",
         "location": "Auckland",
         "closing_time": "20 minutes"
@@ -170,7 +170,7 @@
         "title": "Vintage Camera",
         "description": "A collectible camera from the 1930s, this piece retains its original case and operational integrity.",
         "start_price": 300,
-        "reserve_price": 900,
+        "reserve_price": 1,
         "image_url": "https://images.squarespace-cdn.com/content/v1/59cc767e8dd04135bf0c554c/1601495404590-1Y4BAGGHEP1Y1S6ROAF0/IMG_0458.jpg?format=1500w",
         "location": "Christchurch",
         "closing_time": "2 hours"

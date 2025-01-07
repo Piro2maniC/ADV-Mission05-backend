@@ -7,7 +7,7 @@ const AuctionItems = require('./models/auctionItems');
 
 const app = express();
 const port = 5000;
-const mongoURI = 'mongodb://localhost:27017/MISSION05';
+const mongoURI = 'mongodb://localhost:27017/auctions_db';
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -63,6 +63,8 @@ app.get('/api/auctions', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch auction items' });
     }
 });
+
+
 
 // Update Route
 app.put('/update/:id', async (req, res) => {
