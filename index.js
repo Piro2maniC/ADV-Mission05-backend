@@ -52,6 +52,16 @@ app.get('/find', async (req, res) => {
     }
 });
 
+// Fetch 5 auction items
+app.get('/api/auctions', async (req, res) => {
+    try {
+        const items = await AuctionItems.find().limit(5);
+        res.json(items);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch auction items' });
+    }
+});
+
 // Update Route
 app.put('/update/:id', async (req, res) => {
     try {
