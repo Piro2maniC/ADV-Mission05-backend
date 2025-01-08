@@ -9,8 +9,7 @@ const app = express();
 const port = 5001; // Changed from 5000 to 5001
 const mongoURI = "mongodb://localhost:27017/MISSION05";
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001']
-
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002']
 
 app.use(cors({
     origin: function (origin, callback) {
