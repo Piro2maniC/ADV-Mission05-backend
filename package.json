@@ -10,8 +10,9 @@
     "commander": "^9.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "mongo": "^0.1.0",
     "mongodb": "^5.0.0",
-    "mongoose": "^8.9.1"
+    "mongoose": "^8.9.3"
   },
   "repository": {
     "type": "git",

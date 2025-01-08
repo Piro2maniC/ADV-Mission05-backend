@@ -9,3 +9,4 @@ const AuctionItemSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('AuctionItems', AuctionItemSchema);
+

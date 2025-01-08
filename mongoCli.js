@@ -4,7 +4,7 @@ const AuctionItems = require('./models/auctionItems');
 const fs = require('fs'); // Add this line to import the fs module
 
 const program = new Command();
-const mongoURI = 'mongodb://localhost:27017/MISSION05';
+const mongoURI = 'mongodb://localhost:27017/auctions_db';
 
 /**
  * Connect to the MongoDB database. If the connection fails, exit the program.
@@ -116,7 +116,7 @@ program
         }
     });
 
-program
+    program
     .command('seed <filePath>')
     .description('Seed the database with auction items from a JSON file')
     .action(async (filePath) => {
@@ -124,6 +124,7 @@ program
             await connect();
             const data = fs.readFileSync(filePath);
             const auctionItems = JSON.parse(data);
+            console.log('Data to be seeded:', auctionItems); // Add this line
             const result = await AuctionItems.insertMany(auctionItems);
             console.log('Seeded documents:', result);
         } catch (err) {

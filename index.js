@@ -62,16 +62,52 @@ app.get("/find", async (req, res) => {
   }
 });
 
-// Find by ID Route
-app.get("/find/:id", async (req, res) => {
+app.get("/api/auctions", async (req, res) => {
   try {
-    const document = await AuctionItems.findById(req.params.id);
-    if (!document) {
-      return res.status(404).json({ error: "Item not found" });
+    const items = await AuctionItems.find().limit(10);
+    console.log("Fetched items:", items); // Log fetched items
+    res.json(items);
+  } catch (err) {
+    console.error("Error fetching auction items:", err);
+    res.status(500).json({ error: "Failed to fetch auction items" });
+  }
+});
+
+// Get single auction item by ID
+app.get("/api/auction-items/:id", async (req, res) => {
+  try {
+    const item = await AuctionItems.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
     }
-    res.json(document);
+    res.json(item);
   } catch (error) {
-    console.error("Error finding document:", error);
+    console.error("Error finding item:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get("/api/auctions", async (req, res) => {
+  try {
+    const items = await AuctionItems.find().limit(10);
+    console.log("Fetched items:", items); // Log fetched items
+    res.json(items);
+  } catch (err) {
+    console.error("Error fetching auction items:", err);
+    res.status(500).json({ error: "Failed to fetch auction items" });
+  }
+});
+
+// Get single auction item by ID
+app.get("/api/auction-items/:id", async (req, res) => {
+  try {
+    const item = await AuctionItems.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(item);
+  } catch (error) {
+    console.error("Error finding item:", error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -94,6 +130,112 @@ app.put("/update/:id", async (req, res) => {
   }
 });
 
+// Place bid on an item
+app.post("/api/auction-items/:id/bid", async (req, res) => {
+  try {
+    const { bid_amount } = req.body;
+    const item = await AuctionItems.findById(req.params.id);
+
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    if (bid_amount <= item.current_bid) {
+      return res
+        .status(400)
+        .json({ message: "Bid must be higher than current bid" });
+    }
+
+    item.current_bid = bid_amount;
+    item.bids += 1;
+    await item.save();
+
+    res.json(item);
+  } catch (error) {
+    console.error("Error placing bid:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Buy now
+app.post("/api/auction-items/:id/buy-now", async (req, res) => {
+  try {
+    const item = await AuctionItems.findById(req.params.id);
+
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    if (!item.buy_now_price) {
+      return res
+        .status(400)
+        .json({ message: "Buy now not available for this item" });
+    }
+
+    item.current_bid = item.buy_now_price;
+    item.is_sold = true;
+    await item.save();
+
+    res.json(item);
+  } catch (error) {
+    console.error("Error processing buy now:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Place bid on an item
+app.post("/api/auction-items/:id/bid", async (req, res) => {
+  try {
+    const { bid_amount } = req.body;
+    const item = await AuctionItems.findById(req.params.id);
+
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    if (bid_amount <= item.current_bid) {
+      return res
+        .status(400)
+        .json({ message: "Bid must be higher than current bid" });
+    }
+
+    item.current_bid = bid_amount;
+    item.bids += 1;
+    await item.save();
+
+    res.json(item);
+  } catch (error) {
+    console.error("Error placing bid:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Buy now
+app.post("/api/auction-items/:id/buy-now", async (req, res) => {
+  try {
+    const item = await AuctionItems.findById(req.params.id);
+
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    if (!item.buy_now_price) {
+      return res
+        .status(400)
+        .json({ message: "Buy now not available for this item" });
+    }
+
+    item.current_bid = item.buy_now_price;
+    item.is_sold = true;
+    await item.save();
+
+    res.json(item);
+  } catch (error) {
+    console.error("Error processing buy now:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Delete Route
 app.delete("/delete/:id", async (req, res) => {
   try {
@@ -111,4 +253,5 @@ app.delete("/delete/:id", async (req, res) => {
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
