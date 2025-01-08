@@ -21,6 +21,7 @@ const AuctionItemSchema = new mongoose.Schema({
     is_deleted: { type: Boolean, default: false },
     is_sold: { type: Boolean, default: false },
 });
+ 
 
 module.exports = mongoose.model('AuctionItems', AuctionItemSchema);
 
