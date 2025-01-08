@@ -9,14 +9,21 @@ const app = express();
 const port = 5001; // Changed from 5000 to 5001
 const mongoURI = "mongodb://localhost:27017/MISSION05";
 
-// CORS configuration
-const corsOptions = {
-  origin: "http://localhost:3000", // Allow your frontend URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"],
-};
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001']
 
-app.use(cors(corsOptions));
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+}));
+
 app.use(bodyParser.json());
 
 // Connect to MongoDB
