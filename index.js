@@ -11,6 +11,7 @@ const mongoURI = "mongodb://localhost:27017/MISSION05";
 
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002']
 
+
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -76,6 +77,28 @@ app.get("/api/auctions", async (req, res) => {
   } catch (err) {
     console.error("Error fetching auction items:", err);
     res.status(500).json({ error: "Failed to fetch auction items" });
+  }
+});
+
+// Endpoint to compare multiple items
+app.get("/api/auction-items/compare", async (req, res) => {
+  try {
+    const ids = req.query.ids?.split(","); // Expects ids as comma-separated string
+
+    if (!ids || ids.length === 0) {
+      return res.status(400).json({ message: "No IDs provided" });
+    }
+
+    const items = await AuctionItems.find({ _id: { $in: ids } });
+
+    if (items.length === 0) {
+      return res.status(404).json({ message: "No items found" });
+    }
+
+    res.json(items);
+  } catch (error) {
+    console.error("Error finding items:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
