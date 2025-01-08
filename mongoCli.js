@@ -4,7 +4,7 @@ const AuctionItems = require('./models/auctionItems');
 const fs = require('fs'); // Add this line to import the fs module
 
 const program = new Command();
-const mongoURI = 'mongodb://localhost:27017/auctions_db';
+const mongoURI = 'mongodb://localhost:27017/MISSION05';
 
 /**
  * Connect to the MongoDB database. If the connection fails, exit the program.
