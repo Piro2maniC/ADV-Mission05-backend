@@ -6,13 +6,8 @@ const mongoose = require('mongoose');
 const AuctionItems = require('./models/auctionItems');
 
 const app = express();
-<<<<<<< HEAD
 const port = 4000;
 const mongoURI = 'mongodb://localhost:27017/MISSION05';
-=======
-const port = 5000;
-const mongoURI = 'mongodb://localhost:27017/auctions_db';
->>>>>>> 9bd3f93630b28a88e1f5710c3c1797cdca856486
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -57,7 +52,18 @@ app.get('/find', async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
+app.get('/api/auctions', async (req, res) => {
+    try {
+        const items = await AuctionItems.find().limit(10);
+        console.log('Fetched items:', items); // Log fetched items
+        res.json(items);
+    } catch (err) {
+        console.error('Error fetching auction items:', err);
+        res.status(500).json({ error: 'Failed to fetch auction items' });
+    }
+});
+ 
+
 // Get single auction item by ID
 app.get('/api/auction-items/:id', async (req, res) => {
     try {
@@ -72,22 +78,6 @@ app.get('/api/auction-items/:id', async (req, res) => {
     }
 });
 
-=======
-// Fetch 5 auction items
-app.get('/api/auctions', async (req, res) => {
-    try {
-        const items = await AuctionItems.find().limit(10);
-        console.log('Fetched items:', items); // Log fetched items
-        res.json(items);
-    } catch (err) {
-        console.error('Error fetching auction items:', err);
-        res.status(500).json({ error: 'Failed to fetch auction items' });
-    }
-});
-
-
-
->>>>>>> 9bd3f93630b28a88e1f5710c3c1797cdca856486
 // Update Route
 app.put('/update/:id', async (req, res) => {
     try {
